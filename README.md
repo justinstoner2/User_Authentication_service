@@ -24,3 +24,4 @@ users = {"bo": "542", "jo": "123", "justin": "huidf"}
 
 
 UML Diagram
+![UML_Diagram](https://github.com/justinstoner2/User_Authentication_service/assets/20779045/08b0922b-5bc2-4bcc-b563-365fbe4c3e8f)
