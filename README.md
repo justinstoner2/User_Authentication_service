@@ -8,17 +8,19 @@ This service rus on a FLASK webb server locally on port 5001. When sending a req
 Example:
 users = {"bo": "542", "jo": "123", "justin": "huidf"}
 
-@app.route("/checkLogIn")
-def checkLogIn():
-    response = requests.post(
-        http://localhost:5001/checkLogin, json={"login_info": ["bo", "542"], "users": users.json})
-        
-    is_login_valid = response.json()
+
+    @app.route("/checkLogIn")
+        def checkLogIn():
     
-    if is_login_valid:
-        return "<p>Correct Login Info</p>"
-    else:
-        return "<p>Incorrect Login Info</p>"
+        response = requests.post(
+            http://localhost:5001/checkLogin, json={"login_info": ["bo", "542"], "users": users.json})
+        
+        is_login_valid = response.json()
+    
+        if is_login_valid:
+            return "<p>Correct Login Info</p>"
+        else:
+            return "<p>Incorrect Login Info</p>"
 
 
 UML Diagram
