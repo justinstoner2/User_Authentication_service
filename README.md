@@ -12,7 +12,9 @@ users = {"bo": "542", "jo": "123", "justin": "huidf"}
 def checkLogIn():
     response = requests.post(
         http://localhost:5001/checkLogin, json={"login_info": ["bo", "542"], "users": users.json})
+        
     is_login_valid = response.json()
+    
     if is_login_valid:
         return "<p>Correct Login Info</p>"
     else:
