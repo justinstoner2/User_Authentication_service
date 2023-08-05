@@ -3,7 +3,7 @@ A micro service for checking a username and password to a given acceptable usern
 
 Communication Contract:
 
-This service rus on a FLASK webb server locally on port 5001. When sending a request to the service you need to provide a json objects that contains both the username and password that you want to validate and also a dictionary of all valid usernames and passwords. Below is an example of how you can successfully use the service. The example below is using a flask webserver and what is shown is a route. The URL to check log in info shold be http://localhost:5001/checkLogin
+This service rus on a FLASK webb server locally on port 5001. When sending a request to the service you need to provide a json objects that contains both the username and password that you want to validate. Below is an example of how you can successfully use the service. The example below is using a flask webserver and what is shown is a route. The URL to check log in info shold be http://localhost:5001/checkLogin
 
 Example:
 users = {"bo": "542", "jo": "123", "justin": "huidf"}
@@ -13,7 +13,7 @@ users = {"bo": "542", "jo": "123", "justin": "huidf"}
         def checkLogIn():
     
         response = requests.post(
-            http://localhost:5001/checkLogin, json={"login_info": ["bo", "542"], "users": users.json})
+            http://localhost:5001/checkLogin, json={"login_info": ["bo", "542"]})
         
         is_login_valid = response.json()
     
