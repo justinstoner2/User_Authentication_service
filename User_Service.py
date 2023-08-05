@@ -1,4 +1,5 @@
 from flask import Flask, jsonify, request
+import csv
 
 app = Flask(__name__)
 
@@ -7,10 +8,18 @@ app = Flask(__name__)
 def checkLogIn():
     data = request.get_json()
     login_info = data.get("login_info", [])
-    users = data.get("users", {})
+    usersDict = {}
+    with open ('active_users.csv',newline='') as csvfile:
+        reader = csv.DictReader(csvfile)
+        print(reader)
+        for row in reader:
+            
+            usersDict[row['\ufeffusername']]=row['password']
+    
+    
     print(login_info[0])
-    print(users)
-    return jsonify(isActiveUser(users, login_info))
+    print(usersDict)
+    return jsonify(isActiveUser(usersDict,login_info))
 
 
 def isActiveUser(users, logIn):
