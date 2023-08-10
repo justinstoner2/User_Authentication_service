@@ -9,12 +9,15 @@ def checkLogIn():
     data = request.get_json()
     login_info = data.get("login_info", [])
     usersDict = {}
-    with open ('active_users.csv',newline='') as csvfile:
+    with open ('active_users.csv',newline='',encoding='utf-8-sig') as csvfile:
         reader = csv.DictReader(csvfile)
         print(reader)
+        
         for row in reader:
-            
-            usersDict[row['\ufeffusername']]=row['password']
+            username = row['username']
+            password = row['password']
+            print(username)    
+            usersDict[username]=password
     
     
     print(login_info[0])
